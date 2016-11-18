@@ -15,24 +15,40 @@ See also: Pharmacogenomics, May 2016, Vol. 17, No. 7, Pages 691-700, or http://w
 
 #Examples
 gDat      <- initIC50(szFileName='~/myFile.csv')
+
 fmMod1    <- fitModel(gDat)
+
 outStats  <- gatherModelStats(gDat=gDat,fmMod1=fmMod1)
+
 dfIC50    <- outStats$IC50
+
 dfRMSE    <- outStats$RMSE
+
 dfAUC     <- outStats$AUC
+
 dfAUCtrap <- outStats$AUCtrap
 
 The input data looks as follows:
 
 Grouped Data: y ~ x | drug/CL
+
   x          y     CL drug maxc
+  
 1 9 0.88079708 MC-CAR    1    2
+
 2 8 0.79139147 MC-CAR    1    2
+
 3 7 0.66075637 MC-CAR    1    2
+
 4 6 0.50000000 MC-CAR    1    2
+
 5 5 0.33924363 MC-CAR    1    2
+
 6 4 0.20860853 MC-CAR    1    2
+
 7 3 0.11920292 MC-CAR    1    2
+
 8 2 0.06496917 MC-CAR    1    2
+
 9 1 0.03444520 MC-CAR    1    2
 
