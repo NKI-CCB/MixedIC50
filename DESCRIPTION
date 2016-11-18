@@ -1,0 +1,16 @@
+Package: djvMixedIC50
+Type: Package
+Title: Estimate IC50 from drug dilution series
+Version: 0.9.5
+Date: 2016-08-17
+Author: Daniel J. Vis <d.vis@nki.nl>
+Maintainer: Daniel J. Vis <d.vis@nki.nl>
+Description: Estimate IC50 from a two-parameter nonlinear mixed model
+License: GPL-3
+Depends:
+    nlme,
+    foreach,
+    doMC,
+    caTools,
+    scales
+RoxygenNote: 5.0.1
