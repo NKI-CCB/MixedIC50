@@ -283,7 +283,7 @@ gatherModelStats <- function(gDat,fmMod1){
     vLines <- unique(gDat$CL[j2])
     out <- lapply(1:length(vLines),function(ii){
       j2.1 <- which(gDat$CL[j2] == vLines[ii])
-      j2.2 <- grep(sprintf('^%s/',vLines[ii]),rownames(mc1)[j])
+      j2.2 <- which(mc1$CL[j] == vLines[ii])
       v1 <- log(getConcentrationFromFold(xmid = mc1$xmid[j[j2.2]],fHighConc = max(gDat$maxc[j2[j2.1]]),iFold = 2))
       v2 <- 1-(getIntegral(9,mc1$xmid[j[j2.2]],mc1$scal[j[j2.2]])-getIntegral(min(gDat$x[j2[j2.1]]),mc1$xmid[j[j2.2]],mc1$scal[j[j2.2]]))/(max(gDat$x[j2[j2.1]])-min(gDat$x[j2[j2.1]]))
       yhat <- logist3(gDat$x[j2[j2.1]],mc1$xmid[j[j2.2]],mc1$scal[j[j2.2]])
