@@ -1,8 +1,13 @@
-#Estimating IC50 values using a mixed effects model.
+# New version
+
+The code has been retooled and a new version can be found at: https://github.com/CancerRxGene/gdscIC50 
+
+
+# Estimating IC50 values using a mixed effects model.
 
 _djvMixedIC50_ allows you to estimate IC50 and AUC values using a non-linear mixed model. It estimates all the responses simultaneously and capitalizes on the entire set of responses for each cell line to infer its shape. This significantly reduces the ambiguity of the cell line's shape and thus improves the estimate.
 
-#Details
+# etails
 The package was initially designed for the GDSC compound sensitivity screen produced by the Wellcome Trust Sanger Institute. Their typical assay is a 9 point assay with 2-fold dilutions. However, all screen comprising sets of cell lines exposed to a series of compounds can benefit from this modeling approach.
 
 As a design choice, the IC50 is not directly estimated on the concentration range, but on the dilution steps. In this way, the internal IC50 estimates are comparable in terms of response range. Internally the fold-dilution is constant at 2, other constants can be accommodated by using a custom predictor vector (see also _getXfromConcSeries_).
@@ -13,7 +18,7 @@ The resultant matrices hold the natural logarithm of the estimated micro Molar I
 
 See also: Pharmacogenomics, May 2016, Vol. 17, No. 7, Pages 691-700, or http://www.ncbi.nlm.nih.gov/pubmed/27180993
 
-#Examples
+# Examples
 gDat      <- initIC50(szFileName='~/myFile.csv')
 
 fmMod1    <- fitModel(gDat)
